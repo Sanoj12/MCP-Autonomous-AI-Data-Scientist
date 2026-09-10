@@ -25,6 +25,10 @@ jobs:
       # Install uv
       - name: Install uv
         uses: astral-sh/setup-uv@v6
+      
+      # Create virtual environment
+      - name: Create virtual environment
+        run: uv venv
 
       # Install Python
       - name: Setup Python
