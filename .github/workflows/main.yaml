@@ -32,13 +32,13 @@ jobs:
 
       # Install backend dependencies
       - name: Install Dependencies
-        working-directory: backend
+        working-directory: Backend
         run: |
           uv pip install -r requirements.txt
 
       # Check Python syntax
       - name: Check Python
-        working-directory: backend
+        working-directory: Backend
         run: |
           uv run python -m compileall .
 
