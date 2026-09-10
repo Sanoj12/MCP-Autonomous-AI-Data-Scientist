@@ -1,12 +1,20 @@
-[tool.poetry]
+[project]
 name = "mcp-autonomous-ai-data-scientist"
 version = "0.1.0"
 description = "AI Data Scientist MCP application"
 readme = "README.md"
-package-mode = false
+requires-python = ">=3.11"
 
-[tool.poetry.dependencies]
-python = ">=3.11,<4.0"
-fastapi = "*"
-uvicorn = { extras = ["standard"], version = "*" }
-python-multipart = "*"
+dependencies = [
+    "pandas",
+    "pytest",
+    "scikit-learn",
+    "uvicorn[standard]",
+    "langgraph",
+    "fastapi",
+    "mlflow",
+    "mcp",
+]
+
+[tool.uv]
+package = false
