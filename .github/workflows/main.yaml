@@ -66,12 +66,12 @@ jobs:
 
       # Install frontend dependencies
       - name: Install Dependencies
-        working-directory: frontend/rbac-rag
+        working-directory: frontend
         run: |
           npm ci
 
       # Build Next.js
       - name: Build Frontend
-        working-directory: frontend/rbac-rag
+        working-directory: frontend
         run: |
           npm run build
