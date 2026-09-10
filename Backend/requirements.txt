@@ -1,10 +1,10 @@
 pandas
 pytest
 scikit-learn
-
+uvicorn[standard]
 langgraph
 fastapi
-uvicorn
+
 mlflow
 scikit-learn
 mcp
