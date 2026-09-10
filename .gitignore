@@ -1,0 +1,29 @@
+# MLflow
+mlruns/
+
+# Uploaded files
+uploads/
+
+# Model artifacts
+artifacts/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+.env.*
+
+# Frontend dependencies
+frontend/node_modules/
+
+# Next.js build
+frontend/.next/
+
+# Logs
+*.log

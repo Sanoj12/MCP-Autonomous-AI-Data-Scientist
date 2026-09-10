@@ -1,0 +1,78 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+
+
+  # backend continuous integration
+
+  backend-test:
+    name: Backend Test
+    runs-on: ubuntu-latest
+
+    steps:
+
+      #Get code from GitHub
+      - name: Checkout Repository
+
+        uses: actions/checkout@v4
+
+
+      #install Python
+      - name: Set Up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # install backend dependencies
+      - name: Install Backend Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r application/requirements.txt
+
+      # check Python syntax
+      - name: Check Python Syntax
+        run: |
+          python -m compileall application
+
+
+  # frontned continuous integration
+ 
+  frontend-test:
+    name: Frontend Test
+    runs-on: ubuntu-latest
+
+    steps:
+
+      #get code from GitHub
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      #install Node.js
+      - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/rbac-rag/package-lock.json
+
+      # install frontend dependencies
+      - name: Install Frontend Dependencies
+        working-directory: frontend/rbac-rag
+        run: |
+          npm ci
+
+      #build Next.js application
+      - name: Build Next.js Application
+        working-directory: frontend/rbac-rag
+        run: |
+          npm run build

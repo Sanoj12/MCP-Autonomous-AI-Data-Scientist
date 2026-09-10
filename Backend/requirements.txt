@@ -1,0 +1,10 @@
+pandas
+pytest
+scikit-learn
+shap 
+langgraph
+fastapi
+uvicorn
+mlflow
+scikit-learn
+mcp
