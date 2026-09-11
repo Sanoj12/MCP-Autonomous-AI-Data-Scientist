@@ -24,7 +24,7 @@ from Backend.app.evaluation.critic import critic
 
 from Backend.app.mlops.mlflow_tracker import track_models
 from Backend.app.mlops.model_registry import register_model
-from Backend.app.artifacts.artifact import save_model_artifact
+from Backend.app.save.artifact import save_model_artifact
 from langgraph.types import interrupt
 
 
