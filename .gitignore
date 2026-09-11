@@ -4,8 +4,6 @@ mlruns/
 # Uploaded files
 uploads/
 
-# Model artifacts
-artifacts/
 
 # Python cache
 __pycache__/
